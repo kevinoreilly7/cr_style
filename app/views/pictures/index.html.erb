@@ -1,0 +1,38 @@
+<h1>Pictures</h1>
+
+<p><%= link_to 'Add a New Picture', new_picture_url %></p>
+
+<!-- <table>
+  <thead>
+ -->   <!--  <tr>
+      <th>Caption</th>
+      <th>Add pic</th>
+      <th>Source</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+ -->
+  <body>
+
+  <% @pictures.each do |picture| %>
+
+<ul style="list-style: none;">
+
+      <li><%= picture.caption %></li>
+      <li><%= check_box_tag picture.add_pic %></li>
+      <li><%= image_tag picture.source, :width => 300 %></li>
+
+
+      <li><%= link_to 'Show', picture_url(picture) %></li>
+      <li><%= link_to 'Edit', edit_picture_url(picture) %></li>
+      <li><%= link_to 'Destroy', picture_url(picture), method: 'delete', data: { confirm: "Do you really want to delete this picture?" } %></li>
+
+    </tr>
+</ul>
+
+  <% end %>
+  </body>
+</table>
+

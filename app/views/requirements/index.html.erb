@@ -1,0 +1,32 @@
+<h1>Requirements</h1>
+
+<p><%= link_to 'Add a New Requirement', new_requirement_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sf</th>
+      <th>Location</th>
+      <th>Price</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @requirements.each do |requirement| %>
+    <tr>
+      <td><%= requirement.sf %></td>
+      <td><%= requirement.location %></td>
+      <td><%= requirement.price %></td>
+  
+      <td><%= link_to 'Show', requirement_url(requirement) %></td>
+      <td><%= link_to 'Edit', edit_requirement_url(requirement) %></td>
+      <td><%= link_to 'Destroy', requirement_url(requirement), method: 'delete', data: { confirm: "Do you really want to delete this requirement?" } %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

@@ -1,0 +1,30 @@
+<h1>Professionals</h1>
+
+<p><%= link_to 'Add a New Professional', new_professional_url %></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Architect company</th>
+      <th>Photographer</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @professionals.each do |professional| %>
+    <tr>
+      <td><%= professional.architect_company %></td>
+      <td><%= professional.photographer %></td>
+  
+      <td><%= link_to 'Show', professional_url(professional) %></td>
+      <td><%= link_to 'Edit', edit_professional_url(professional) %></td>
+      <td><%= link_to 'Destroy', professional_url(professional), method: 'delete', data: { confirm: "Do you really want to delete this professional?" } %></td>
+
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

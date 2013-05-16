@@ -1,0 +1,31 @@
+<h1>Editing Profile #<%= @profile.id %></h1>
+
+
+<%= form_tag(profile_url(@profile), method: 'put') do %>
+
+  <div>
+    <%= label_tag :picture_id %><br />
+    <%= number_field_tag :picture_id, @profile.picture_id %>
+  </div>
+
+  <div>
+    <%= label_tag :user_id %><br />
+    <%= number_field_tag :user_id, @profile.user_id %>
+  </div>
+
+  <div>
+    <%= label_tag :professional_id %><br />
+    <%= number_field_tag :professional_id, @profile.professional_id %>
+  </div>
+
+  <div>
+    <%= label_tag :requirement_id %><br />
+    <%= number_field_tag :requirement_id, @profile.requirement_id %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Update Profile" %>
+  </div>
+
+<% end %>

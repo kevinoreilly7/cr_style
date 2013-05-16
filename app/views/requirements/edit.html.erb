@@ -1,0 +1,26 @@
+<h1>Editing Requirement #<%= @requirement.id %></h1>
+
+
+<%= form_tag(requirement_url(@requirement), method: 'put') do %>
+
+  <div>
+    <%= label_tag :sf %><br />
+    <%= number_field_tag :sf, @requirement.sf %>
+  </div>
+
+  <div>
+    <%= label_tag :location %><br />
+    <%= text_field_tag :location, @requirement.location %>
+  </div>
+
+  <div>
+    <%= label_tag :price %><br />
+    <%= text_field_tag :price, @requirement.price %>
+  </div>
+
+  
+  <div>
+    <%= submit_tag "Update Requirement" %>
+  </div>
+
+<% end %>
